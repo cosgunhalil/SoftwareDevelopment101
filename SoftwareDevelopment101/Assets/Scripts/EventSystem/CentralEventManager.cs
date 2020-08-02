@@ -1,33 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class CentralEventManager
+﻿
+namespace SD101.Common
 {
-    private static readonly CentralEventManager instance = new CentralEventManager();
+    using SD101.Services.Ads;
 
-    private AdsEventSystem adsEventSystem = new AdsEventSystem();
-
-    static CentralEventManager()
+    public class CentralEventManager
     {
+        private static readonly CentralEventManager instance = new CentralEventManager();
 
-    }
+        private AdsEventSystem adsEventSystem = new AdsEventSystem();
 
-    private CentralEventManager()
-    {
-
-    }
-
-    public static CentralEventManager Instance
-    {
-        get
+        static CentralEventManager()
         {
-            return instance;
+
+        }
+
+        private CentralEventManager()
+        {
+
+        }
+
+        public static CentralEventManager Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+        public AdsEventSystem GetUIStateEventManager()
+        {
+            return adsEventSystem;
         }
     }
 
-    public AdsEventSystem GetUIStateEventManager()
-    {
-        return adsEventSystem;
-    }
 }
+
