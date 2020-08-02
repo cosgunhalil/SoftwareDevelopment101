@@ -8,7 +8,12 @@ namespace SD101.Examples.BoxingUnboxing
 {
     public class AdDataCollector : IObserver<SD101.Common.AdEvent>
     {
-        private AdDataSender adDataSender = new AdDataSender(); // todo use dependency injection
+        private AdDataSender adDataSender;
+
+        public AdDataCollector(AdDataSender dataSender)
+        {
+            adDataSender = dataSender;
+        }
 
         public void Init()
         {
@@ -20,7 +25,6 @@ namespace SD101.Examples.BoxingUnboxing
             CentralEventManager.Instance.GetAdsEventManager().Unregister(this);
         }
 
-        //todo handle
         public void Notify(object sender, Common.AdEvent e)
         {
             adDataSender.SendAdData(e.Type, (int)e.ExtraInfo);//unboxing

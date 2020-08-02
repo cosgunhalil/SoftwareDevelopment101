@@ -7,10 +7,11 @@ namespace SD101.Examples.BoxingUnboxing
 {
     public class BoxingUnboxingSample : MonoBehaviour
     {
-        // Start is called before the first frame update
         void Start()
         {
-            AdDataCollector adDataCollector = new AdDataCollector();
+            AdDataSender dataSender = new AdDataSender();
+            AdDataCollector adDataCollector = new AdDataCollector(dataSender);
+
             adDataCollector.Init();
 
             AdManager adManager = new AdManager();
