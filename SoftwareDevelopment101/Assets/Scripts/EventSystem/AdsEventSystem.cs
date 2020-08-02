@@ -4,11 +4,11 @@ namespace SD101.Services.Ads
     using System.Collections.Generic;
     using SD101.Common.Observer;
 
-    public class AdsEventSystem : ISubject<SD101.Common.Event>
+    public class AdsEventSystem : ISubject<SD101.Common.AdEvent>
     {
-        private List<IObserver<SD101.Common.Event>> observers = new List<IObserver<SD101.Common.Event>>();
+        private List<IObserver<SD101.Common.AdEvent>> observers = new List<IObserver<SD101.Common.AdEvent>>();
 
-        public void Register(IObserver<SD101.Common.Event> observer)
+        public void Register(IObserver<SD101.Common.AdEvent> observer)
         {
             if (!observers.Contains(observer))
             {
@@ -16,7 +16,7 @@ namespace SD101.Services.Ads
             }
         }
 
-        public void UnRegister(IObserver<SD101.Common.Event> observer)
+        public void Unregister(IObserver<SD101.Common.AdEvent> observer)
         {
             if (observers.Contains(observer))
             {
@@ -24,7 +24,7 @@ namespace SD101.Services.Ads
             }
         }
 
-        public void AddEvent(SD101.Common.Event eventArgs)
+        public void AddEvent(SD101.Common.AdEvent eventArgs)
         {
             for (int i = 0; i < observers.Count; i++)
             {

@@ -3,16 +3,16 @@ namespace SD101.Common
 {
     using System;
 
-    public class Event : EventArgs
+    public class AdEvent : EventArgs
     {
-        public EventType Type;
+        public AdEventType Type;
         public object ExtraInfo;
     }
 
-    public enum EventType
+    public enum AdEventType
     {
-        LOADING,
-        START,
-        FINISH
+        INTERSTITIAL_AD_COMPLETED,
+        REWARDED_AD_SKIPPED,
+        REWARDED_AD_COMPLETED
     }
 }

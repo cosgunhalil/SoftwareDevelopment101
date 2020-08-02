@@ -27,7 +27,7 @@ namespace SD101.Common
             }
         }
 
-        public AdsEventSystem GetUIStateEventManager()
+        public AdsEventSystem GetAdsEventManager()
         {
             return adsEventSystem;
         }
