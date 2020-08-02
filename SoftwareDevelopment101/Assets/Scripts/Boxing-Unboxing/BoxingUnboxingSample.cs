@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxingUnboxingSample : MonoBehaviour
+namespace SD101.Examples.BoxingUnboxing
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BoxingUnboxingSample : MonoBehaviour
     {
-        
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
 
+        }
+
+    }
 }
+
+
