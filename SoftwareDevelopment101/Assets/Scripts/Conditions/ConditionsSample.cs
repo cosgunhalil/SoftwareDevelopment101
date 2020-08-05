@@ -1,5 +1,5 @@
 ﻿
-namespace SD101.Examples.Conditions
+namespace SD101.Example.Conditions
 {
     using System;
     using UnityEngine;

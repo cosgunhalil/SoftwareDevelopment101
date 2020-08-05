@@ -1,5 +1,5 @@
 ﻿
-namespace SD101.Examples.DataTypes
+namespace SD101.Example.DataTypes
 {
     using System;
     using UnityEngine;

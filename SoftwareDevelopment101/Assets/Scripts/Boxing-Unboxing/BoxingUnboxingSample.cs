@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using SD101.Services.Ads;
 using UnityEngine;
 
-namespace SD101.Examples.BoxingUnboxing
+namespace SD101.Example.BoxingUnboxing
 {
     public class BoxingUnboxingSample : MonoBehaviour
     {

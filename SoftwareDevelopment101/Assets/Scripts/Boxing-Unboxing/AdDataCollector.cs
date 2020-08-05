@@ -4,7 +4,7 @@ using SD101.Common;
 using SD101.Common.Observer;
 using UnityEngine;
 
-namespace SD101.Examples.BoxingUnboxing
+namespace SD101.Example.BoxingUnboxing
 {
     public class AdDataCollector : IObserver<SD101.Common.AdEvent>
     {
