@@ -7,6 +7,7 @@ namespace SD101
     using System;
     using SD101.Common;
     using SD101.Example.Conditions;
+    using SD101.Example.Function;
     using SD101.Example.Loops;
     using UnityEngine;
 
@@ -15,7 +16,8 @@ namespace SD101
         private List<IExample> examples = new List<IExample>();
         private ConditionsSample conditionsSample = new ConditionsSample();
         private LoopSample loopSample = new LoopSample();
-        // Start is called before the first frame update
+        private FunctionExample functionExample = new FunctionExample();
+
         void Start()
         {
             SetupExamplesList();
@@ -27,18 +29,26 @@ namespace SD101
             examples.Add(loopSample);
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 ExecuteLoopsExample();
             }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                ExecuteFunctionExample();
+            }
         }
 
         private void ExecuteLoopsExample()
         {
             loopSample.Execute();
+        }
+
+        private void ExecuteFunctionExample()
+        {
+            functionExample.Execute();
         }
     }
 }
