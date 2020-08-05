@@ -10,12 +10,19 @@ namespace SD101.Example.Loops
     {
         private const int NUMBER_COUNT_IN_THE_LIST = 100;
         private List<int> sampleNumberList = new List<int>();
+        
 
         public void Execute()
         {
+            //1st part
             FillTheNumbersList();
             IterateTheNumbersList();
             ClearNumbersList();
+
+            //2nd part
+            ExecuteWhileSample();
+            ExecuteDoWhileSample();
+
         }
 
         private void FillTheNumbersList()
@@ -54,6 +61,33 @@ namespace SD101.Example.Loops
             sampleNumberList.Clear();
 
             Debug.Log("sampleNumberList.Count = " + sampleNumberList.Count);
+        }
+
+        private void ExecuteWhileSample()
+        {
+            var target = 10;
+            var count = 0;
+
+            while (count < target)
+            {
+                Debug.Log("count:" + count + "/target:" + target);
+                count++;
+            }
+        }
+
+        private void ExecuteDoWhileSample()
+        {
+            var min = 30;
+            var max = 70;
+            var target = 50;
+            int random;
+
+            do
+            {
+                random = UnityEngine.Random.Range(min, max);
+                Debug.Log("random = " + random + " - target = " + target);
+
+            } while (random < target);
         }
     }
 }
