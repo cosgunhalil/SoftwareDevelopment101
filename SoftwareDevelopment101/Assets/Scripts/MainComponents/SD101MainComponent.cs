@@ -16,9 +16,9 @@ namespace SD101
     using SD101.Example.Nullable;
     using SD101.Example.BoxingUnboxing;
     using SD101.Example.DataTypes;
-    using System;
+    using SD101.Services.Input;
 
-    public class SD101MainComponent : MonoBehaviour
+    public class SD101MainComponent : MonoBehaviour, SD101.Common.Observer.IObserver<ExampleInputEvent>
     {
         private Dictionary<ExampleType, IExample> exampleDictionary = new Dictionary<ExampleType, IExample>
         {
@@ -48,12 +48,12 @@ namespace SD101
 
         private void Start()
         {
-            //register event
+            CentralEventManager.Instance.GetExampleInputEventSystem().Register(this);
         }
 
         private void OnDestroy()
         {
-            //unRegister event
+            CentralEventManager.Instance.GetExampleInputEventSystem().Unregister(this);
         }
 
         void Update()
@@ -148,6 +148,11 @@ namespace SD101
         private void ExecuteConditionsSample()
         {
             conditionsSample.Execute();
+        }
+
+        public void Notify(object sender, ExampleInputEvent e)
+        {
+            exampleDictionary[e.GetEventType()].Execute();
         }
     }
 

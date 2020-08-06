@@ -1,18 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
-public class ExampleInputButton : MonoBehaviour
+namespace SD101.Example.UserInterface
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    using LB.SuperUI.BaseComponents;
+    using SD101.Common;
 
-    // Update is called once per frame
-    void Update()
+    public class ExampleInputButton : LB_Button
     {
-        
+        private ExampleType type;
+        [SerializeField]
+        private TMPro.TextMeshProUGUI textContainer;
+
+        public void SetType(ExampleType type)
+        {
+            this.type = type;
+            SyncView();
+        }
+
+        private void SyncView()
+        {
+            textContainer.text = type.ToString();
+        }
+
+        protected override void OnPointerDown()
+        {
+            CentralEventManager.Instance.GetExampleInputEventSystem().AddEvent(new Services.Input.ExampleInputEvent(type));
+        }
     }
 }
+
+
