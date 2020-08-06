@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using SD101.Common;
-using UnityEngine;
+﻿
 
 namespace SD101.Example.Nullable
 {
+    using UnityEngine;
+    using SD101.Common;
+
     public class NullableExample : IExample
     {
         private int? nullableInt = null;

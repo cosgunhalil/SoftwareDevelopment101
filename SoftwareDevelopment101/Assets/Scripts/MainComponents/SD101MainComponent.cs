@@ -8,7 +8,9 @@ namespace SD101
     using SD101.Common;
     using SD101.Example.Conditions;
     using SD101.Example.Function;
+    using SD101.Example.IENumerable;
     using SD101.Example.Loops;
+    using SD101.Example.Nullable;
     using UnityEngine;
 
     public class SD101MainComponent : MonoBehaviour
@@ -17,6 +19,9 @@ namespace SD101
         private ConditionsSample conditionsSample = new ConditionsSample();
         private LoopSample loopSample = new LoopSample();
         private FunctionExample functionExample = new FunctionExample();
+        private NullableExample nullableExample = new NullableExample();
+        private EnumerableExample enumeratorExample = new EnumerableExample();
+
 
         void Start()
         {
@@ -25,6 +30,7 @@ namespace SD101
 
         private void SetupExamplesList()
         {
+            //todo setup the examples list
             examples.Add(conditionsSample);
             examples.Add(loopSample);
         }
@@ -39,6 +45,10 @@ namespace SD101
             {
                 ExecuteFunctionExample();
             }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                ExecuteEnumeratorExample();
+            }
         }
 
         private void ExecuteLoopsExample()
@@ -49,6 +59,11 @@ namespace SD101
         private void ExecuteFunctionExample()
         {
             functionExample.Execute();
+        }
+
+        private void ExecuteEnumeratorExample()
+        {
+            enumeratorExample.Execute();
         }
     }
 }
