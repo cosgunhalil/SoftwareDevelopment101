@@ -3,6 +3,7 @@ namespace SD101.Common
 {
     using SD101.Services.Ads;
     using SD101.Services.Coroutine;
+    using SD101.Services.Input;
 
     public class CentralEventManager
     {
@@ -10,6 +11,7 @@ namespace SD101.Common
 
         private AdsEventSystem adsEventSystem = new AdsEventSystem();
         private CoroutineEventSystem coroutineEventSystem = new CoroutineEventSystem();
+        private ExampleInputEventSystem exampleInputSystem = new ExampleInputEventSystem();
 
         static CentralEventManager()
         {
@@ -37,6 +39,11 @@ namespace SD101.Common
         public CoroutineEventSystem GetCoroutineEventsManager()
         {
             return coroutineEventSystem;
+        }
+
+        public ExampleInputEventSystem GetExampleInputEventSystem()
+        {
+            return exampleInputSystem;
         }
     }
 

@@ -2,16 +2,17 @@
 namespace SD101.Example.DataTypes
 {
     using System;
+    using SD101.Common;
     using UnityEngine;
 
-    public class DataTypeSample : MonoBehaviour
+    public class DataTypeSample : IExample
     {
-        // Start is called before the first frame update
-        void Start()
+        public void Execute()
         {
             ValueTypeSample valueTypeSample = new ValueTypeSample();
 
             var sampleStruct = new SampleStruct();
+
             //var sampleClassA = new SampleClass();
             //var sampleClassB = new SampleClass();
 

@@ -15,11 +15,27 @@ namespace SD101
     using SD101.Example.Loops;
     using SD101.Example.Nullable;
     using SD101.Example.BoxingUnboxing;
+    using SD101.Example.DataTypes;
     using System;
 
     public class SD101MainComponent : MonoBehaviour
     {
-        private List<IExample> examples = new List<IExample>();
+        private Dictionary<ExampleType, IExample> exampleDictionary = new Dictionary<ExampleType, IExample>
+        {
+            { ExampleType.DATA_TYPE, new DataTypeSample() },
+            { ExampleType.NULLABLE, new NullableExample() },
+            { ExampleType.BOXING_UNBOXING, new BoxingUnboxingSample() },
+            { ExampleType.CONDITIONS, new ConditionsSample() },
+            { ExampleType.LOOPS, new LoopSample() },
+            { ExampleType.FUNCTIONS, new FunctionExample() },
+            { ExampleType.ENUMERABLE, new EnumerableExample() },
+            { ExampleType.INTERFACE, new InterfaceExample() },
+            { ExampleType.ABSTRACT_CLASS, new AbstractClassExample() },
+            { ExampleType.EXTENSION_CLASS, new ExtensionClassExample() }
+
+        };
+
+        private DataTypeSample dataTypeSample = new DataTypeSample();
         private BoxingUnboxingSample boxingUnboxingSample = new BoxingUnboxingSample();
         private ConditionsSample conditionsSample = new ConditionsSample();
         private LoopSample loopSample = new LoopSample();
@@ -30,16 +46,14 @@ namespace SD101
         private AbstractClassExample abstractClassExample = new AbstractClassExample();
         private ExtensionClassExample extensionClassExample = new ExtensionClassExample();
 
-        void Start()
+        private void Start()
         {
-            SetupExamplesList();
+            //register event
         }
 
-        private void SetupExamplesList()
+        private void OnDestroy()
         {
-            //todo setup the examples list
-            examples.Add(conditionsSample);
-            examples.Add(loopSample);
+            //unRegister event
         }
 
         void Update()
@@ -75,6 +89,14 @@ namespace SD101
             else if (Input.GetKeyDown(KeyCode.Alpha8))
             {
                 ExecuteBoxingUnboxingExample();
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                ExecuteDataTypeExample();
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                ExecuteConditionsSample();
             }
         }
 
@@ -117,6 +139,31 @@ namespace SD101
         {
             boxingUnboxingSample.Execute();
         }
+
+        private void ExecuteDataTypeExample()
+        {
+            dataTypeSample.Execute();
+        }
+
+        private void ExecuteConditionsSample()
+        {
+            conditionsSample.Execute();
+        }
+    }
+
+    public enum ExampleType
+    {
+        DATA_TYPE,
+        NULLABLE,
+        BOXING_UNBOXING,
+        CONDITIONS,
+        LOOPS,
+        FUNCTIONS,
+        ENUMERABLE,
+        INTERFACE,
+        ABSTRACT_CLASS,
+        EXTENSION_CLASS,
+        COUNT
     }
 }
 
