@@ -6,6 +6,7 @@ namespace SD101
 {
     using System;
     using SD101.Common;
+    using SD101.Example.AbstaractClass;
     using SD101.Example.Conditions;
     using SD101.Example.Function;
     using SD101.Example.IENumerable;
@@ -23,6 +24,7 @@ namespace SD101
         private NullableExample nullableExample = new NullableExample();
         private EnumerableExample enumeratorExample = new EnumerableExample();
         private InterfaceExample interfaceExample = new InterfaceExample();
+        private AbstractClassExample abstractClassExample = new AbstractClassExample();
 
 
         void Start()
@@ -55,6 +57,14 @@ namespace SD101
             {
                 ExecuteInterfaceExample();
             }
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                ExecuteAbstractClassExample();
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                ExecuteNullableExample();
+            }
         }
 
         private void ExecuteLoopsExample()
@@ -75,6 +85,16 @@ namespace SD101
         private void ExecuteInterfaceExample()
         {
             interfaceExample.Execute();
+        }
+
+        private void ExecuteAbstractClassExample()
+        {
+            abstractClassExample.Execute();
+        }
+
+        private void ExecuteNullableExample()
+        {
+            nullableExample.Execute();
         }
     }
 }

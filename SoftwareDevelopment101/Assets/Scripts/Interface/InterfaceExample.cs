@@ -8,6 +8,8 @@ namespace SD101.Example.Interface
     {
         public void Execute()
         {
+            //IExample example = new IExample();
+
             Runner runner = new Runner();
             runner.Run();
             runner.Compete();
