@@ -9,6 +9,7 @@ namespace SD101
     using SD101.Example.Conditions;
     using SD101.Example.Function;
     using SD101.Example.IENumerable;
+    using SD101.Example.Interface;
     using SD101.Example.Loops;
     using SD101.Example.Nullable;
     using UnityEngine;
@@ -21,6 +22,7 @@ namespace SD101
         private FunctionExample functionExample = new FunctionExample();
         private NullableExample nullableExample = new NullableExample();
         private EnumerableExample enumeratorExample = new EnumerableExample();
+        private InterfaceExample interfaceExample = new InterfaceExample();
 
 
         void Start()
@@ -49,6 +51,10 @@ namespace SD101
             {
                 ExecuteEnumeratorExample();
             }
+            else if(Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                ExecuteInterfaceExample();
+            }
         }
 
         private void ExecuteLoopsExample()
@@ -64,6 +70,11 @@ namespace SD101
         private void ExecuteEnumeratorExample()
         {
             enumeratorExample.Execute();
+        }
+
+        private void ExecuteInterfaceExample()
+        {
+            interfaceExample.Execute();
         }
     }
 }
