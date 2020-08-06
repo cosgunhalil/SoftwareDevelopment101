@@ -4,16 +4,17 @@ using System.Collections.Generic;
 
 namespace SD101
 {
-    using System;
+    using UnityEngine;
     using SD101.Common;
     using SD101.Example.AbstaractClass;
     using SD101.Example.Conditions;
+    using SD101.Example.ExtensionClass;
     using SD101.Example.Function;
     using SD101.Example.IENumerable;
     using SD101.Example.Interface;
     using SD101.Example.Loops;
     using SD101.Example.Nullable;
-    using UnityEngine;
+
 
     public class SD101MainComponent : MonoBehaviour
     {
@@ -25,7 +26,7 @@ namespace SD101
         private EnumerableExample enumeratorExample = new EnumerableExample();
         private InterfaceExample interfaceExample = new InterfaceExample();
         private AbstractClassExample abstractClassExample = new AbstractClassExample();
-
+        private ExtensionClassExample extensionClassExample = new ExtensionClassExample();
 
         void Start()
         {
@@ -65,6 +66,10 @@ namespace SD101
             {
                 ExecuteNullableExample();
             }
+            else if (Input.GetKeyDown(KeyCode.Alpha7))
+            {
+                ExecuteExtensionClassExample();
+            }
         }
 
         private void ExecuteLoopsExample()
@@ -95,6 +100,11 @@ namespace SD101
         private void ExecuteNullableExample()
         {
             nullableExample.Execute();
+        }
+
+        private void ExecuteExtensionClassExample()
+        {
+            extensionClassExample.Execute();
         }
     }
 }
