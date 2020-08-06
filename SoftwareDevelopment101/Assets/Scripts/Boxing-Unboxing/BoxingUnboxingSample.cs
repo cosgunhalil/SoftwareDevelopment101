@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using SD101.Services.Ads;
-using UnityEngine;
+﻿
 
 namespace SD101.Example.BoxingUnboxing
 {
-    public class BoxingUnboxingSample : MonoBehaviour
+    using SD101.Common;
+    using SD101.Services.Ads;
+
+    public class BoxingUnboxingSample : IExample
     {
-        void Start()
+        public void Execute()
         {
             AdDataSender dataSender = new AdDataSender();
             AdDataCollector adDataCollector = new AdDataCollector(dataSender);

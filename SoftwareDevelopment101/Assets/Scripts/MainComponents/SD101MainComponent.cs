@@ -14,11 +14,13 @@ namespace SD101
     using SD101.Example.Interface;
     using SD101.Example.Loops;
     using SD101.Example.Nullable;
-
+    using SD101.Example.BoxingUnboxing;
+    using System;
 
     public class SD101MainComponent : MonoBehaviour
     {
         private List<IExample> examples = new List<IExample>();
+        private BoxingUnboxingSample boxingUnboxingSample = new BoxingUnboxingSample();
         private ConditionsSample conditionsSample = new ConditionsSample();
         private LoopSample loopSample = new LoopSample();
         private FunctionExample functionExample = new FunctionExample();
@@ -70,6 +72,10 @@ namespace SD101
             {
                 ExecuteExtensionClassExample();
             }
+            else if (Input.GetKeyDown(KeyCode.Alpha8))
+            {
+                ExecuteBoxingUnboxingExample();
+            }
         }
 
         private void ExecuteLoopsExample()
@@ -105,6 +111,11 @@ namespace SD101
         private void ExecuteExtensionClassExample()
         {
             extensionClassExample.Execute();
+        }
+
+        private void ExecuteBoxingUnboxingExample()
+        {
+            boxingUnboxingSample.Execute();
         }
     }
 }
