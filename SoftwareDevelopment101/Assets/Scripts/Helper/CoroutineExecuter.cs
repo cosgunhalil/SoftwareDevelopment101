@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class CoroutineExecuter : MonoBehaviour, SD101.Common.Observer.IObserver<CoroutineEvent>
 {
-
     private void Start()
     {
         CentralEventManager.Instance.GetCoroutineEventsManager().Register(this);      

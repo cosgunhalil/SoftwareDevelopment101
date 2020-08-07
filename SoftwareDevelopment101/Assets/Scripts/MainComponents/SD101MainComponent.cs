@@ -17,6 +17,7 @@ namespace SD101
     using SD101.Example.BoxingUnboxing;
     using SD101.Example.DataTypes;
     using SD101.Services.Input;
+    using SD101.Example.Inheritence;
 
     public class SD101MainComponent : MonoBehaviour, SD101.Common.Observer.IObserver<ExampleInputEvent>
     {
@@ -31,20 +32,10 @@ namespace SD101
             { ExampleType.ENUMERABLE, new EnumerableExample() },
             { ExampleType.INTERFACE, new InterfaceExample() },
             { ExampleType.ABSTRACT_CLASS, new AbstractClassExample() },
-            { ExampleType.EXTENSION_CLASS, new ExtensionClassExample() }
+            { ExampleType.EXTENSION_CLASS, new ExtensionClassExample() },
+            { ExampleType.INHERITENCE, new InheritenceExample()}
 
         };
-
-        private DataTypeSample dataTypeSample = new DataTypeSample();
-        private BoxingUnboxingSample boxingUnboxingSample = new BoxingUnboxingSample();
-        private ConditionsSample conditionsSample = new ConditionsSample();
-        private LoopSample loopSample = new LoopSample();
-        private FunctionExample functionExample = new FunctionExample();
-        private NullableExample nullableExample = new NullableExample();
-        private EnumerableExample enumeratorExample = new EnumerableExample();
-        private InterfaceExample interfaceExample = new InterfaceExample();
-        private AbstractClassExample abstractClassExample = new AbstractClassExample();
-        private ExtensionClassExample extensionClassExample = new ExtensionClassExample();
 
         private void Start()
         {
@@ -54,100 +45,6 @@ namespace SD101
         private void OnDestroy()
         {
             CentralEventManager.Instance.GetExampleInputEventSystem().Unregister(this);
-        }
-
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                ExecuteLoopsExample();
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                ExecuteFunctionExample();
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                ExecuteEnumeratorExample();
-            }
-            else if(Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                ExecuteInterfaceExample();
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha5))
-            {
-                ExecuteAbstractClassExample();
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha6))
-            {
-                ExecuteNullableExample();
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha7))
-            {
-                ExecuteExtensionClassExample();
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha8))
-            {
-                ExecuteBoxingUnboxingExample();
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha9))
-            {
-                ExecuteDataTypeExample();
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha0))
-            {
-                ExecuteConditionsSample();
-            }
-        }
-
-        private void ExecuteLoopsExample()
-        {
-            loopSample.Execute();
-        }
-
-        private void ExecuteFunctionExample()
-        {
-            functionExample.Execute();
-        }
-
-        private void ExecuteEnumeratorExample()
-        {
-            enumeratorExample.Execute();
-        }
-
-        private void ExecuteInterfaceExample()
-        {
-            interfaceExample.Execute();
-        }
-
-        private void ExecuteAbstractClassExample()
-        {
-            abstractClassExample.Execute();
-        }
-
-        private void ExecuteNullableExample()
-        {
-            nullableExample.Execute();
-        }
-
-        private void ExecuteExtensionClassExample()
-        {
-            extensionClassExample.Execute();
-        }
-
-        private void ExecuteBoxingUnboxingExample()
-        {
-            boxingUnboxingSample.Execute();
-        }
-
-        private void ExecuteDataTypeExample()
-        {
-            dataTypeSample.Execute();
-        }
-
-        private void ExecuteConditionsSample()
-        {
-            conditionsSample.Execute();
         }
 
         public void Notify(object sender, ExampleInputEvent e)
@@ -168,6 +65,7 @@ namespace SD101
         INTERFACE,
         ABSTRACT_CLASS,
         EXTENSION_CLASS,
+        INHERITENCE,
         COUNT
     }
 }

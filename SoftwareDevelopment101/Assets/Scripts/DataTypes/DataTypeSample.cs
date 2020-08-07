@@ -11,8 +11,10 @@ namespace SD101.Example.DataTypes
         {
             ValueTypeSample valueTypeSample = new ValueTypeSample();
 
-            var sampleStruct = new SampleStruct();
-
+            //assign a value example
+            ExecuteAssignValueExample();
+            ExecuteAssignDefaultValueExample();
+            ExecuteStringPassExample();
             //var sampleClassA = new SampleClass();
             //var sampleClassB = new SampleClass();
 
@@ -22,6 +24,43 @@ namespace SD101.Example.DataTypes
             //sampleClassB.sampleInt = 1002;
 
             //Debug.Log(sampleClassA.sampleInt);
+        }
+
+        private void ExecuteAssignValueExample()
+        {
+            int assignedValue = 10;
+            var sampleStruct = new SampleStruct();
+
+            sampleStruct.sampleInt = assignedValue;
+
+            sampleStruct.sampleInt = 9;
+
+            Debug.Log("assignedValue = " + assignedValue);
+        }
+
+        private void ExecuteAssignDefaultValueExample()
+        {
+            var structA = new SampleStruct();
+            Debug.Log("structA.sampleInt = " + structA.sampleInt);
+            
+
+            if (structA.sampleClass == null)
+            {
+                Debug.Log("structA.sampleClass is null");
+            }
+        }
+
+        private void ExecuteStringPassExample()
+        {
+            string str = "Elvis";
+            ChangeString(str);
+
+            Debug.Log("str = " + str);
+        }
+
+        private void ChangeString(string str)
+        {
+            str = "Presley";
         }
     }
 
@@ -176,7 +215,7 @@ namespace SD101.Example.DataTypes
         {
             Debug.Log("default value of bool = " + sampleBool);
             Debug.Log("size of bool = " + sizeof(bool));
-            Debug.Log("Type of double = " + sampleBool.GetType());
+            Debug.Log("Type of bool = " + sampleBool.GetType());
 
             AddSeperatorLog();
         }
@@ -214,6 +253,7 @@ namespace SD101.Example.DataTypes
         public int sampleInt;
         public float sampleFloat;
         public string sampleString;
+        public SampleClass sampleClass;
     }
 
     public class SampleClass

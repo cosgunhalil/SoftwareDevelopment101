@@ -5,7 +5,6 @@ namespace SD101.Example.IENumerable
     using System.Collections;
     using System.Collections.Generic;
     using SD101.Common;
-    using System;
 
     public class EnumerableExample : IExample
     {
