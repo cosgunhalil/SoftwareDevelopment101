@@ -18,6 +18,7 @@ namespace SD101
     using SD101.Example.DataTypes;
     using SD101.Services.Input;
     using SD101.Example.Inheritence;
+    using SD101.Example.Encapsulation;
 
     public class SD101MainComponent : MonoBehaviour, SD101.Common.Observer.IObserver<ExampleInputEvent>
     {
@@ -33,7 +34,9 @@ namespace SD101
             { ExampleType.INTERFACE, new InterfaceExample() },
             { ExampleType.ABSTRACT_CLASS, new AbstractClassExample() },
             { ExampleType.EXTENSION_CLASS, new ExtensionClassExample() },
-            { ExampleType.INHERITENCE, new InheritenceExample()}
+            { ExampleType.INHERITENCE, new InheritenceExample()},
+            { ExampleType.ENCAPSULATION, new EncapsulationExample()}
+
 
         };
 
@@ -66,6 +69,7 @@ namespace SD101
         ABSTRACT_CLASS,
         EXTENSION_CLASS,
         INHERITENCE,
+        ENCAPSULATION,
         COUNT
     }
 }
