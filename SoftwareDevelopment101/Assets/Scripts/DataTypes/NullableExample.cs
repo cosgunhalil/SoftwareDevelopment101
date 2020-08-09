@@ -8,6 +8,7 @@ namespace SD101.Example.Nullable
     public class NullableExample : IExample
     {
         private int? nullableInt = null;
+        private int? sampleInt = null;
 
         public void Execute()
         {

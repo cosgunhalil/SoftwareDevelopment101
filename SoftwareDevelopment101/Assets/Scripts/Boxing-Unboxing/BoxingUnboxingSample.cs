@@ -9,6 +9,7 @@ namespace SD101.Example.BoxingUnboxing
     {
         public void Execute()
         {
+            //Inject AdDataSender to AdDataCollector
             AdDataSender dataSender = new AdDataSender();
             AdDataCollector adDataCollector = new AdDataCollector(dataSender);
 

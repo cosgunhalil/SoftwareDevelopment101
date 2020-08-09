@@ -16,6 +16,16 @@ namespace SD101.Example.ExtensionClass
             };
 
             Debug.Log("area of the square = " + square.CalculateArea());
+
+            List<string> nameList = new List<string> {
+                "Bob",
+                "Elvis",
+                "Ali",
+                "Mehmet",
+                "Tanınmış Kişi"
+            };
+
+            Debug.Log(nameList.GetRandomMember());
         }
     }
 
@@ -24,6 +34,12 @@ namespace SD101.Example.ExtensionClass
         public static int CalculateArea(this Square square)
         {
             return square.a * square.a;
+        }
+
+        public static T GetRandomMember<T>(this List<T> list)
+        {
+            int random = UnityEngine.Random.Range(0, list.Count);
+            return list[random];
         }
     }
 

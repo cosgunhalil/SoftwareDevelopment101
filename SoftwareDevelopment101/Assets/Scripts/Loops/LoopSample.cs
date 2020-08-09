@@ -46,10 +46,10 @@ namespace SD101.Example.Loops
             Debug.Log("sampleNumberList.Count = " + sampleNumberList.Count);
 
             //way 1 
-            for (int i = 0; i < NUMBER_COUNT_IN_THE_LIST; i++)
-            {
-                sampleNumberList.Remove(i);
-            }
+            //for (int i = 0; i < NUMBER_COUNT_IN_THE_LIST; i++)
+            //{
+            //    sampleNumberList.Remove(i);
+            //}
 
             //way 2 - is it works?
             //foreach (var number in sampleNumberList)
@@ -58,7 +58,7 @@ namespace SD101.Example.Loops
             //}
 
             //better way
-            sampleNumberList.Clear();
+            //sampleNumberList.Clear();
 
             Debug.Log("sampleNumberList.Count = " + sampleNumberList.Count);
         }

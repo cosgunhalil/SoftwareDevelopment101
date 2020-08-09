@@ -10,6 +10,7 @@ namespace SD101.Example.BoxingUnboxing
     {
         private AdDataSender adDataSender;
 
+        //Dependency injection
         public AdDataCollector(AdDataSender dataSender)
         {
             adDataSender = dataSender;

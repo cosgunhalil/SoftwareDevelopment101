@@ -117,10 +117,17 @@ namespace SD101.Example.Conditions
                     {
                         case 3:
                             Debug.Log("state is 3");
+
+                            if (true)
+                            {
+                                //todo
+                            }
+
                             break;
                         default:
                             break;
                     }
+
                     
                     break;
                 default:

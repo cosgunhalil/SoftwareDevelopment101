@@ -23,6 +23,8 @@ namespace SD101.Example.Function
 
         private void ExecuteLambdaExpression()
         {
+            //(parameter passing) => {code block}
+
             Func<int, string> GetColor = (colorCode) => {
 
                 switch (colorCode)
@@ -74,12 +76,13 @@ namespace SD101.Example.Function
             };
 
 
-            Dictionary<string, Action<Robot>> actionDictionary = new Dictionary<string, Action<Robot>>();
-
-            actionDictionary.Add("left", moveLeft);
-            actionDictionary.Add("right", moveRight);
-            actionDictionary.Add("up", moveUp);
-            actionDictionary.Add("down", moveDown);
+            Dictionary<string, Action<Robot>> actionDictionary = new Dictionary<string, Action<Robot>>
+            {
+                { "left", moveLeft },
+                { "right", moveRight },
+                { "up", moveUp },
+                { "down", moveDown }
+            };
 
             //move the robot
 

@@ -20,6 +20,7 @@ namespace SD101
     using SD101.Example.Inheritence;
     using SD101.Example.Encapsulation;
     using SD101.Example.Polymorphism;
+    using SD101.Example.Abstraction;
 
     public class SD101MainComponent : MonoBehaviour, SD101.Common.Observer.IObserver<ExampleInputEvent>
     {
@@ -37,11 +38,13 @@ namespace SD101
             { ExampleType.EXTENSION_CLASS, new ExtensionClassExample() },
             { ExampleType.INHERITENCE, new InheritenceExample()},
             { ExampleType.ENCAPSULATION, new EncapsulationExample()},
-            { ExampleType.POLYMORPHISM, new PolymorphismExample()}
+            { ExampleType.POLYMORPHISM, new PolymorphismExample()},
+            { ExampleType.ABSTRACTION, new AbstractionExample()}
         };
 
         private void Start()
         {
+            //userdan input gelirse haberdar olmalıyım. O yüzden de register olayım.
             CentralEventManager.Instance.GetExampleInputEventSystem().Register(this);
         }
 
@@ -50,8 +53,10 @@ namespace SD101
             CentralEventManager.Instance.GetExampleInputEventSystem().Unregister(this);
         }
 
+        //DATA_TYPE
         public void Notify(object sender, ExampleInputEvent e)
         {
+            //DATA_TYPE
             exampleDictionary[e.GetEventType()].Execute();
         }
     }
@@ -71,6 +76,7 @@ namespace SD101
         INHERITENCE,
         ENCAPSULATION,
         POLYMORPHISM,
+        ABSTRACTION,
         COUNT
     }
 }

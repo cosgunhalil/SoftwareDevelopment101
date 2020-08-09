@@ -9,7 +9,10 @@ namespace SD101.Example.Encapsulation
     {
         public void Execute()
         {
-            Debug.Log("SomeObject Id = " + new SomeObject().GetId());
+            SomeObject obj = new SomeObject(1);
+            obj.SetId(1245);
+
+            Debug.Log("SomeObject Id = " + new SomeObject(1).GetId());
         }
     }
 
@@ -17,9 +20,19 @@ namespace SD101.Example.Encapsulation
     {
         private int id;//encapsulated field
 
+        public SomeObject(int id)
+        {
+            this.id = id;
+        }
+
         public int GetId()
         {
             return id;
+        }
+
+        public void SetId(int id)
+        {
+            this.id = id;
         }
     }
     

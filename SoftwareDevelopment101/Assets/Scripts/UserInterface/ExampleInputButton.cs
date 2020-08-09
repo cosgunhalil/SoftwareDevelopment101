@@ -10,7 +10,7 @@ namespace SD101.Example.UserInterface
 
     public class ExampleInputButton : LB_Button
     {
-        private ExampleType type;
+        private ExampleType type;//DATA_TYPE
         [SerializeField]
         private TMPro.TextMeshProUGUI textContainer;
 
@@ -27,7 +27,7 @@ namespace SD101.Example.UserInterface
 
         protected override void OnPointerDown()
         {
-            CentralEventManager.Instance.GetExampleInputEventSystem().AddEvent(new Services.Input.ExampleInputEvent(type));
+            CentralEventManager.Instance.GetExampleInputEventSystem().AddEvent(new Services.Input.ExampleInputEvent(type));//Data type eventi yollandı
         }
     }
 }

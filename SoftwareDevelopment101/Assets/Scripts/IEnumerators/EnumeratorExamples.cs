@@ -12,8 +12,8 @@ namespace SD101.Example.IENumerable
 
         public void Execute()
         {
-            ExecuteIEnumeratorPart1();
-            ExecuteIEnumeratorPart2();
+            //ExecuteIEnumeratorPart1();
+            //ExecuteIEnumeratorPart2();
             ExecuteCoroutineExample();
         }
 
@@ -33,7 +33,7 @@ namespace SD101.Example.IENumerable
             Debug.Log(enumerator.Current);
             enumerator.MoveNext();
             Debug.Log(enumerator.Current);
-            enumerator.Reset();
+            enumerator.Reset();  //index = -1
             Debug.Log(enumerator.Current);
             enumerator.MoveNext();
             Debug.Log(enumerator.Current);
@@ -140,7 +140,7 @@ namespace SD101.Example.IENumerable
 
         public void Reset()
         {
-            index = 0;
+            index = -1;
         }
     }
 

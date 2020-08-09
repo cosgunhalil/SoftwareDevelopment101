@@ -16,7 +16,6 @@ namespace SD101.Example.Interface
         }
     }
 
-    //todo apply interface segregation
     public class Runner : IRunnerAthlete
     {
         public void Compete()

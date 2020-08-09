@@ -9,7 +9,7 @@ public class CoroutineExecuter : MonoBehaviour, SD101.Common.Observer.IObserver<
 {
     private void Start()
     {
-        CentralEventManager.Instance.GetCoroutineEventsManager().Register(this);      
+        CentralEventManager.Instance.GetCoroutineEventsManager().Register(this);
     }
 
     private void OnDestroy()
@@ -21,4 +21,6 @@ public class CoroutineExecuter : MonoBehaviour, SD101.Common.Observer.IObserver<
     {
         StartCoroutine(e.enumerator);
     }
+
+   
 }

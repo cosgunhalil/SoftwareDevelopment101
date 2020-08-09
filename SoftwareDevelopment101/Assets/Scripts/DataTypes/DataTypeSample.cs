@@ -7,14 +7,17 @@ namespace SD101.Example.DataTypes
 
     public class DataTypeSample : IExample
     {
+        //Burası çalıştı
         public void Execute()
         {
-            ValueTypeSample valueTypeSample = new ValueTypeSample();
+            //ValueTypeSample valueTypeSample = new ValueTypeSample();
 
             //assign a value example
-            ExecuteAssignValueExample();
-            ExecuteAssignDefaultValueExample();
-            ExecuteStringPassExample();
+            //ExecuteAssignValueExample();
+            //ExecuteAssignDefaultValueExample();
+            //ExecuteStringPassExample();
+            ExecuteStringBehavior();
+
             //var sampleClassA = new SampleClass();
             //var sampleClassB = new SampleClass();
 
@@ -35,7 +38,7 @@ namespace SD101.Example.DataTypes
 
             sampleStruct.sampleInt = 9;
 
-            Debug.Log("assignedValue = " + assignedValue);
+            Debug.Log("<color=green>assignedValue</color> = " + assignedValue);
         }
 
         private void ExecuteAssignDefaultValueExample()
@@ -53,14 +56,30 @@ namespace SD101.Example.DataTypes
         private void ExecuteStringPassExample()
         {
             string str = "Elvis";
-            ChangeString(str);
+            ChangeString(ref str);
 
             Debug.Log("str = " + str);
         }
 
-        private void ChangeString(string str)
+        private void ChangeString(ref string str)//copy
         {
             str = "Presley";
+        }
+
+
+        private void ExecuteStringBehavior()
+        {
+            string changableString = "Sample centence";
+            CompleteCentence(ref changableString);
+
+            //referens yolladık, noktayo ekledik : Sample centence.
+            Debug.Log("<color=yellow>" + changableString + "</color>");
+        }
+
+        //referans type bir şey yolluyorsam, bu içerde değiştirilebilir.
+        private void CompleteCentence(ref string changableString)
+        {
+            changableString += ".";
         }
     }
 
@@ -230,9 +249,9 @@ namespace SD101.Example.DataTypes
         private void AnalyzeIncrementionOfAValueType()
         {
             int a = 10;
-            IncreaseInt(a);
-            //IncreaseInt(ref a);//todo open
-            Debug.Log("a = " + a);
+            //IncreaseInt(a);
+            IncreaseInt(ref a);//todo open
+            Debug.Log("<color=red>a</color> = " + a);
         }
 
         private void IncreaseInt(int a)
@@ -250,10 +269,11 @@ namespace SD101.Example.DataTypes
 
     public struct SampleStruct
     {
-        public int sampleInt;
+        public int sampleInt;//value type
         public float sampleFloat;
         public string sampleString;
-        public SampleClass sampleClass;
+        public SampleClass sampleClass;// reference type
+
     }
 
     public class SampleClass

@@ -28,9 +28,10 @@ namespace SD101.Services.Input
 
         public void AddEvent(ExampleInputEvent eventArgs)
         {
+            //DATA_TYPE Event burada!
             for (int i = 0; i < observers.Count; i++)
             {
-                observers[i].Notify(this, eventArgs);
+                observers[i].Notify(this, eventArgs); //SD101MainComponent de burada!
             }
         }
     }
