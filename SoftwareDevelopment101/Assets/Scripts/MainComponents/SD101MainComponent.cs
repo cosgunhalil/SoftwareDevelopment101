@@ -22,6 +22,7 @@ namespace SD101
     using SD101.Example.Polymorphism;
     using SD101.Example.Abstraction;
     using SD101.Example.SingleResponsibility;
+    using SD101.Example.OpenClosedPrinciple;
 
     public class SD101MainComponent : MonoBehaviour, SD101.Common.Observer.IObserver<ExampleInputEvent>
     {
@@ -41,7 +42,8 @@ namespace SD101
             { ExampleType.ENCAPSULATION, new EncapsulationExample()},
             { ExampleType.POLYMORPHISM, new PolymorphismExample()},
             { ExampleType.ABSTRACTION, new AbstractionExample()},
-            { ExampleType.SINGLE_RESPONSIBILTY, new SingleResponsibilityExample()}
+            { ExampleType.SINGLE_RESPONSIBILTY, new SingleResponsibilityExample()},
+            { ExampleType.OPEN_CLOSED_PRINCIPLE, new OpenClosedPrinciple()}
         };
 
         private void Start()
@@ -80,6 +82,7 @@ namespace SD101
         POLYMORPHISM,
         ABSTRACTION,
         SINGLE_RESPONSIBILTY,
+        OPEN_CLOSED_PRINCIPLE,
         COUNT
     }
 }
