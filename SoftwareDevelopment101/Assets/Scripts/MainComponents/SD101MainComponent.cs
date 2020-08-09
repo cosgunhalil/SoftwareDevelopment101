@@ -21,6 +21,7 @@ namespace SD101
     using SD101.Example.Encapsulation;
     using SD101.Example.Polymorphism;
     using SD101.Example.Abstraction;
+    using SD101.Example.SingleResponsibility;
 
     public class SD101MainComponent : MonoBehaviour, SD101.Common.Observer.IObserver<ExampleInputEvent>
     {
@@ -39,7 +40,8 @@ namespace SD101
             { ExampleType.INHERITENCE, new InheritenceExample()},
             { ExampleType.ENCAPSULATION, new EncapsulationExample()},
             { ExampleType.POLYMORPHISM, new PolymorphismExample()},
-            { ExampleType.ABSTRACTION, new AbstractionExample()}
+            { ExampleType.ABSTRACTION, new AbstractionExample()},
+            { ExampleType.SINGLE_RESPONSIBILTY, new SingleResponsibilityExample()}
         };
 
         private void Start()
@@ -77,6 +79,7 @@ namespace SD101
         ENCAPSULATION,
         POLYMORPHISM,
         ABSTRACTION,
+        SINGLE_RESPONSIBILTY,
         COUNT
     }
 }

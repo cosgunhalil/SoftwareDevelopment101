@@ -9,10 +9,24 @@ namespace SD101.Example.Abstraction
     {
         public void Execute()
         {
+
+            ExecuteExample1();
+            ExecuteExample2();
+
+        }
+
+        private void ExecuteExample1()
+        {
             CoffeeMachine coffeeMachine = new CoffeeMachine();
             Debug.Log(coffeeMachine.GetCoffee("cold brew"));
 
-            Mathf.Pow(2,3);
+            Mathf.Pow(2, 3);
+        }
+
+        private void ExecuteExample2()
+        {
+            BuildingBuilder buildingBuilder = new BuildingBuilder();
+            var building = buildingBuilder.GetBuilding(BuildingType.Home);
         }
     }
 
@@ -59,6 +73,70 @@ namespace SD101.Example.Abstraction
         {
             return name;
         }
+    }
+
+    public class BuildingBuilder
+    {
+        private Building building;
+
+        public Building GetBuilding(BuildingType buildingType)
+        {
+            SetupWalls();
+            PrepereBuilding();
+            CreateMeshes();
+            CreateWindows();
+            CreateDoor();
+
+            return building;
+        }
+
+        private void SetupWalls()
+        {
+            Debug.Log("SetupWalls");
+        }
+
+        private void PrepereBuilding()
+        {
+            Debug.Log("PrepereBuilding");
+        }
+
+        private void CreateMeshes()
+        {
+            Debug.Log("CreateMeshes");
+        }
+
+        private void CreateWindows()
+        {
+            Debug.Log("CreateWindows");
+        }
+
+        private void CreateDoor()
+        {
+            Debug.Log("CreateDoor");
+        }
+    }
+
+    public class Building
+    {
+        private int id;
+
+        public void SetId(int id)
+        {
+            this.id = id;
+        }
+
+        public int GetId()
+        {
+            return id;
+        }
+
+    }
+
+    public enum BuildingType
+    {
+        Barrack,
+        Port,
+        Home
     }
 
 }
