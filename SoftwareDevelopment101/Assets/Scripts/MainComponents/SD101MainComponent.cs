@@ -23,6 +23,8 @@ namespace SD101
     using SD101.Example.Abstraction;
     using SD101.Example.SingleResponsibility;
     using SD101.Example.OpenClosedPrinciple;
+    using SD101.Example.LiskovSubstition;
+    using SD101.Example.DependencyInversion;
 
     public class SD101MainComponent : MonoBehaviour, SD101.Common.Observer.IObserver<ExampleInputEvent>
     {
@@ -43,7 +45,9 @@ namespace SD101
             { ExampleType.POLYMORPHISM, new PolymorphismExample()},
             { ExampleType.ABSTRACTION, new AbstractionExample()},
             { ExampleType.SINGLE_RESPONSIBILTY, new SingleResponsibilityExample()},
-            { ExampleType.OPEN_CLOSED_PRINCIPLE, new OpenClosedPrinciple()}
+            { ExampleType.OPEN_CLOSED_PRINCIPLE, new OpenClosedPrinciple()},
+            { ExampleType.LISKOV_PRINCIPLE, new LiskovSubstitionPrinciple()},
+            { ExampleType.DEPENDENCY_INVERSION, new DependencyInversion()}
         };
 
         private void Start()
@@ -83,6 +87,8 @@ namespace SD101
         ABSTRACTION,
         SINGLE_RESPONSIBILTY,
         OPEN_CLOSED_PRINCIPLE,
+        LISKOV_PRINCIPLE,
+        DEPENDENCY_INVERSION,
         COUNT
     }
 }
